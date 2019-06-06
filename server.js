@@ -1,28 +1,53 @@
-// Dependencies
-const express = requre('express');
-const path = require('path');
+// dependencies
+const express = require('express');
 
 // set up express
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () +> console.log(`Now listening on port ${PORT}`));
-
-
-app.get('/', (req, res) => {
-    res.send('GET request successful')
-});
-
+// set up express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
-app.use(express.jason());
+app.use(express.json());
 
-//tables
-var tables = [
-    {
-        friendName: "Alec",
-        photo: "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTIwNjA4NjMzNTY5NjQxOTk2/steve-buscemi-204410-1-402.jpg",
-        scores: []
-    }
-];
+// router
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
-var friends = [];
+// listener
+app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //tables
+// var tables = [
+//     {
+//         friendName: "Alec",
+//         photo: "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTIwNjA4NjMzNTY5NjQxOTk2/steve-buscemi-204410-1-402.jpg",
+//         scores: []
+//     }
+// ];
+
+// var friends = [];
