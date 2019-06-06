@@ -5,15 +5,15 @@ module.exports = app => {
         res.sendFile(path.join(__dirname, '../public/survey.html'));
     });
 
-	app.get("/", function(req, res) {
+	app.get("/", (req, res) => {
 		res.sendFile(path.join(__dirname, '../public/home.html'));
 	});
 	
-	app.get("/home", function(req, res) {
+	app.get("/home", (req, res) => {
 		res.sendFile(path.join(__dirname, '../public/home.html'));
 	});
 	
-	app.get('*',function (req, res) {
+	app.get('*', (req, res) => {
         res.redirect('/');
 	});    
 
