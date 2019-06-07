@@ -29,6 +29,22 @@ let friends = [{
         "1",
         "1",
     ]
+},
+{
+    'name': "Charlie",
+    'photo': "https://media.giphy.com/media/6bxdx1C9qU5G0/giphy.gif",
+    'scores': [
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+    ]
 }
 ]
 
